@@ -5,11 +5,14 @@ from tools.browser_tools import BrowserTool
 from tools.search_tools import SearchTool
 
 class SkillAgent():
+    
     def Scout_agent(self):
         return Agent(
-            role: "Filtering jobs based on essential criteria",
-            goal: "Select the highest paid jobs",
-            backstory= "I am a job picking expert who is looking for the highest paid jobs",
+            role: "Job Description Summarizer",
+            goal: "Extract and summarize key details from job descriptions, such as the company name, salary range, essential criteria, requirements, and required certifications.",
+            backstory= """Detail-Oriented Analyst: Expertise in HR and recruitment.
+                          Efficiency Enthusiast: Passionate about streamlining information.
+                          Tech-Savvy Professional: Utilizes advanced AI tools for enhanced job search experiences.""",
             tools: [
                 SearchTools.searh_internet,
                 BrowserTools.scrape_and_summarize_website
