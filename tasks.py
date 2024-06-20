@@ -2,44 +2,65 @@ from crewai import Task
 from textwrap import dedent
 from datetime import date
 
-class Tasks():
+class Tasks:
 
-  def identify_jobs(self, agent, job_title, salary_range):
-    return Task(description=dedent(f"""
-        Analyze and select the highest paying job. This task involves comparing
-        salary ranges in jobs description. 
+    def identify_jobs(self, agent, job_title, salary_range):
+        return Task(description=dedent(f"""
+            Identify and select the highest paying job based on the title "{job_title}". 
+            This task involves comparing salary ranges across various job descriptions 
+            to determine the best financial opportunity.
 
-        The job you are looking for: {job_title}
-        The salary you are looking for: {salary_range}
-      """),
-                agent=agent)
+            Criteria:
+            - Job Title: {job_title}
+            - Desired Salary Range: {salary_range}
 
-  def criterium_extracter(self, agent, job_title, salary_range):
-    return Task(description=dedent(f"""
-        Extract the criterium from the job description. This task involves
-        scanning the job description for keywords and phrases.
+            Your final output should be a list of the top three highest paying jobs, 
+            including company names and their respective salary ranges.
+        """),
+                    agent=agent)
 
-        The job you are looking for: {job_title}
-        The salary you are looking for: {salary_range}
-      """),
-                agent=agent)
+    def criterium_extracter(self, agent, job_title, salary_range):
+        return Task(description=dedent(f"""
+            Extract essential criteria from the job description for the title "{job_title}". 
+            This task involves scanning job descriptions and requirements for key 
+            skills, qualifications, and certifications.
 
-  def skill_ranker(self, agent, job_title, salary__range):
-    return Task(description=dedent(f"""
-        List the skills required for the job.
-        This task involves ranking jobs from highest paid to lowest paid jobs
+            Criteria:
+            - Job Title: {job_title}
+            - Desired Salary Range: {salary_range}
 
-        The job you are looking for: {job_title}
-        The salary you are looking for: {salary__range}
-      """),
-                agent=agent)
-  
-  def road_map(self, agent, job_title, salary__range):
-    return Task(description=dedent(f"""
-        Create a personilized road map to get eligible for the highest paid job.
-        This task involves creating a road map for the job.
+            Your final output should be a summary of the essential criteria for the top three jobs, 
+            including required skills, qualifications, and certifications.
+        """),
+                    agent=agent)
 
-        The job you are looking for: {job_title}
-        The salary you are looking for: {salary__range}
-      """),
-                agent=agent)
+    def skill_ranker(self, agent, job_title, salary_range):
+        return Task(description=dedent(f"""
+            Rank the required skills and certifications for the job title "{job_title}". 
+            This task involves listing and ranking jobs from highest to lowest paid based 
+            on the salary range provided.
+
+            Criteria:
+            - Job Title: {job_title}
+            - Desired Salary Range: {salary_range}
+
+            Your final output should be a ranked list of jobs with their required skills 
+            and certifications, from the highest paying to the lowest paying.
+        """),
+                    agent=agent)
+
+    def road_map(self, agent, job_title, salary_range):
+        return Task(description=dedent(f"""
+            Create a personalized roadmap to become eligible for the highest paid job 
+            with the title "{job_title}". This task involves developing a step-by-step 
+            plan, including timelines and resources, to acquire the necessary skills 
+            and certifications.
+
+            Criteria:
+            - Job Title: {job_title}
+            - Desired Salary Range: {salary_range}
+
+            Your final output should be a detailed career development roadmap, including 
+            timelines and useful resources such as courses, books, and certification programs.
+        """),
+                    agent=agent)
