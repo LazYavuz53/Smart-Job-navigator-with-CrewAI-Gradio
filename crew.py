@@ -9,8 +9,8 @@ load_dotenv()
 class SkillCrew:
 
     def __init__(self, job_title, salary_range):
-        self.skill_agent = skill_agent
-        self.tasks = tasks
+        self.skill_agent = SkillAgent
+        self.tasks = Tasks
 
     def run(self):
         agents=SkillAgent()
@@ -18,7 +18,7 @@ class SkillCrew:
 
         job_filterer_agent = agents.Scout_agent()
         requirement_analysis = agents.BluePrint()
-        skill_assessment = agents.SkillSage()
+        #skill_assessment = agents.SkillSage()
         creation_of_roadmap = agents.SuccessJourney()
 
         task_identification = tasks.identify_jobs(
@@ -33,11 +33,11 @@ class SkillCrew:
             self.salary_range
         )
 
-        ranking_of_skills = tasks.skill_ranker(
-            skill_assessment,
-            self.job_title,
-            self.salary_range
-        )
+        #ranking_of_skills = tasks.skill_ranker(
+            #skill_assessment,
+            #self.job_title,
+            #self.salary_range
+        #)
 
         roadmap_creation = tasks.roadmap_creator(
             creation_of_roadmap,
@@ -45,11 +45,11 @@ class SkillCrew:
             self.salary_range
         )
 
-        crew = Crew(
+        crew = crew(
             agents = [
                 job_filterer_agent,
                 requirement_analysis,
-                skill_assessment,
+                #skill_assessment,
                 creation_of_roadmap
             ]
             tasks = [
@@ -65,10 +65,10 @@ class SkillCrew:
     
     if __name__ == "__main__":
         
-        print(## Welcome to the Skill Crew ##)
-        print(## We are going to help you create a roadmap for your next job ##)
-        print(## Please enter the job title and salary range ##)
-        print(## Example: Data Scientist, $50,000 - $100,000 ##)
+        print("## Welcome to the Skill Crew ##")
+        print("## We are going to help you create a roadmap for your next job ##")
+        print("## Please enter the job title and salary range ##")
+        print("## Example: Data Scientist, $50,000 - $100,000 ##")
 
         job_title = input("Enter the job title: ")
         salary_range = input("Enter the salary range: ")
