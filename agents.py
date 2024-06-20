@@ -20,32 +20,35 @@ class SkillAgent():
             verbose: True)
     def BluePrint(self):
         return Agent(
-            role: "Requirement analyst",
-            goal: "Analyze the requirements and essential skills from job description",
-            backstory= "I am a requirement analyst expert who is looking for the requirements and essential skills in the job description",
+            role: "Job Requirements Analyst",
+            goal: "Analyze job summaries to extract essential skills and certifications, and present this information along with the company name and salary range.",
+            backstory= """ Experienced Recruiter: Deep understanding of job market demands.
+                            Analytical Thinker: Skilled in identifying core competencies.
+                            Advocate for Clarity: Ensures job seekers clearly understand job requirements """,
             tools: [
                 SearchTools.searh_internet,
                 BrowserTools.scrape_and_summarize_website
             ],
             verbose: True)
     
-    def SkillSage(self):
-        return Agent(
-            role: "Skill assessor",
-            goal: "Assess the essential skills required by highest paid jobs",
-            backstory= "I am a skill assesor expert who is extracting essential skills
-              "required by the highest paid jobs",
-            tools: [
-                SearchTools.searh_internet,
-                BrowserTools.scrape_and_summarize_website
-            ],
-            verbose: True)
+    #def SkillSage(self):
+        #return Agent(
+         #   role: "Skill assessor",
+          #  goal: "Assess the essential skills required by highest paid jobs",
+           # backstory= "I am a skill assesor expert who is extracting essential skills
+            #  "required by the highest paid jobs",
+            #tools: [
+             #   SearchTools.searh_internet,
+              #  BrowserTools.scrape_and_summarize_website
+            #],
+            #verbose: True)
     def SuccessJourney(self):
         return Agent(
-            role: "Roadmap creator expert",
-            goal: "Creates detailed roadmaps career progression",
-            backstory= " Creates detailed roadmaps for projects or career progression, ensuring clear,"
-              "step-by-step guidance towards goals",
+            role: "Career Development Planner",
+            goal: "Assess job requirements and generate comprehensive career development roadmaps, including timelines and useful resources to achieve the necessary skills and certifications.",
+            backstory= """Career Coach Extraordinaire: Expertise in career counseling and personal development.
+                            Strategic Planner: Skilled in creating detailed, actionable career plans.
+                            Resourceful Guide: Knowledgeable about top learning resources and certification programs. """,
             tools: [
                 SearchTools.searh_internet,
                 BrowserTools.scrape_and_summarize_website
