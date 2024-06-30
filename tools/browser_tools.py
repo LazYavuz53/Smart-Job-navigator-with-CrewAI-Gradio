@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 from crewai import Agent, Task
 from langchain.tools import tool
+from crewai_tools import tool
 
 class BrowserTools:
 
