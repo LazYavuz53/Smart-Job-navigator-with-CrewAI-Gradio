@@ -1,22 +1,24 @@
 import json
 import os
 import requests
+from bs4 import BeautifulSoup
 from crewai import Agent, Task
 from langchain.tools import tool
-from unstructured.partition.html import partition_html
 
 class BrowserTools:
 
-    @tool("Scrape and summarize job listing")
-    def scrape_and_summarize_job_listing(website):
-        """Useful to scrape and summarize a job listing content from a given website"""
+    @tool("Scrape and summarize website content")
+    def scrape_and_summarize_website(website):
+        """Useful to scrape and summarize a website content"""
         url = f"https://chrome.browserless.io/content?token={os.environ['BROWSERLESS_API_KEY']}"
         payload = json.dumps({"url": website})
-        headers = {'cache-control': 'no-cache', 'content-type': 'application/json'}
+        headers = {'Cache-Control': 'no-cache', 'Content-Type': 'application/json'}
         response = requests.post(url, headers=headers, data=payload)
-        elements = partition_html(text=response.text)
-        content = "\n\n".join([str(el) for el in elements])
-        content_chunks = [content[i:i + 8000] for i in range(0, len(content), 8000)]
+        response.raise_for_status()
+        elements = BeautifulSoup(response.text, 'html.parser')
+        job_description = elements.get_text(separator='\n').strip()
+
+        content_chunks = [job_description[i:i + 8000] for i in range(0, len(job_description), 8000)]
         summaries = []
         for chunk in content_chunks:
             agent = Agent(
