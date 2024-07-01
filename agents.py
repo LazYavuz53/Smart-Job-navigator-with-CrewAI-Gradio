@@ -1,12 +1,11 @@
 from crewai import Agent
-from langchain_community.llms import OpenAI
-
+from langchain.chat_models.openai import ChatOpenAI
 from tools.browser_tools import BrowserTools
 from tools.search_tools import SearchTools
 
 class SkillAgent():
     def __init__(self):
-        self.llm = OpenAI(model="gpt-3.5-turbo")
+        self.llm = ChatOpenAI(model="gpt-3.5-turbo")
 
     def Scout_agent(self):
         return Agent(
