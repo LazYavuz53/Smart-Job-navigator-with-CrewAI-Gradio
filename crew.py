@@ -3,6 +3,7 @@ from textwrap import dedent
 from agents import SkillAgent
 from tasks import Tasks
 from dotenv import load_dotenv
+import asyncio
 
 load_dotenv()
 
