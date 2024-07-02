@@ -1,22 +1,24 @@
-import json
 import os
+import json
 import requests
 from bs4 import BeautifulSoup
 from crewai import Agent, Task
 from langchain.tools import tool
 from crewai_tools import tool
+from pyppeteer import launch
 
 class BrowserTools:
 
     @tool("Scrape and summarize website content")
-    def scrape_and_summarize_website(website):
+    async def scrape_and_summarize_website(self, website):
         """Useful to scrape and summarize a website content"""
-        url = f"https://chrome.browserless.io/content?token={os.environ['BROWSERLESS_API_KEY']}"
-        payload = json.dumps({"url": website})
-        headers = {'Cache-Control': 'no-cache', 'Content-Type': 'application/json'}
-        response = requests.post(url, headers=headers, data=payload)
-        response.raise_for_status()
-        elements = BeautifulSoup(response.text, 'html.parser')
+        browser = await launch()
+        page = await browser.newPage()
+        await page.goto(website)
+        content = await page.content()
+        await browser.close()
+
+        elements = BeautifulSoup(content, 'html.parser')
         job_description = elements.get_text(separator='\n').strip()
 
         content_chunks = [job_description[i:i + 8000] for i in range(0, len(job_description), 8000)]
@@ -31,6 +33,6 @@ class BrowserTools:
                 agent=agent,
                 description=f'Analyze and summarize the content below, including the most relevant information. Return only the summary.\n\nCONTENT\n----------\n{chunk}'
             )
-            summary = task.execute()
+            summary = await task.execute()  # Ensure this is awaited
             summaries.append(summary)
         return "\n\n".join(summaries)
