@@ -1,7 +1,7 @@
 from crewai import Crew
 from textwrap import dedent
-from agents import SkillAgent
-from tasks import Tasks
+from .agents import SkillAgent
+from .tasks import Tasks
 from dotenv import load_dotenv
 import asyncio
 
