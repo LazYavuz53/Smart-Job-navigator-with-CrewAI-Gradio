@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from src.smart_job_navigator.crew import SkillCrew
+from .crew import SkillCrew
 
 app = FastAPI()
 
