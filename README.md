@@ -1,23 +1,4 @@
 
-### Creating the File
-
-#### Using a Text Editor
-
-1. Open your preferred text editor (e.g., Notepad, VSCode).
-2. Copy the above content.
-3. Paste it into a new file.
-4. Save the file as `Smart_Job_Navigator_Overview.md`.
-
-#### Using Command Line (PowerShell)
-
-1. Open PowerShell.
-2. Run the following commands to create the file and add the content:
-
-```powershell
-$content = @"
-```
-# Smart Job Navigator
-
 ## Project Overview
 
 ### Introduction
@@ -43,7 +24,7 @@ The Smart Job Navigator is an innovative, AI-driven application designed to stre
 
 ### Project Structure
 
-\`\`\`
+
 Smart Job Navigator/
 ├── README.md
 ├── pyproject.toml
@@ -60,7 +41,7 @@ Smart Job Navigator/
 │   │   ├── tasks.py
 │   │   └── tools/
 │   │       └── custom_tool.py
-\`\`\`
+
 
 ### Technology Stack
 
@@ -83,12 +64,14 @@ Smart Job Navigator/
 ### Setting Up the Project
 
 1. **Clone the Repository**:
+
    \`\`\`bash
    git clone <repository-url>
    cd Smart-Job-Navigator
    \`\`\`
 
 2. **Install Dependencies**:
+
    \`\`\`bash
    pip install -r requirements.txt
    \`\`\`
@@ -97,7 +80,8 @@ Smart Job Navigator/
    - Create a .env file with the necessary environment variables such as API keys.
 
 4. **Run the Application**:
-   \`\`\`bash
+
+   \`\`\`
    uvicorn src.smart_job_navigator.main:app --reload
    \`\`\`
 
