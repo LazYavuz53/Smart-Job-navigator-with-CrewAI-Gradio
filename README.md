@@ -15,6 +15,7 @@
 
 ```powershell
 $content = @"
+```
 # Smart Job Navigator
 
 ## Project Overview
