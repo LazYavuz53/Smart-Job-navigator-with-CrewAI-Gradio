@@ -82,7 +82,7 @@ Smart Job Navigator/
 4. **Run the Application**:
 
    ``` sh
-   uvicorn src.smart_job_navigator.main:app --reload
+   uvicorn smart_job_navigator.main:app --reload
    ```
 
 ### Usage
