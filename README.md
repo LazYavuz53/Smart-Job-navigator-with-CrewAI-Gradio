@@ -99,6 +99,3 @@ Smart Job Navigator/
 ### Conclusion
 
 The Smart Job Navigator aims to revolutionize the job search and career planning landscape by providing personalized, AI-driven insights and roadmaps. With a strong foundation in CrewAI and FastAPI, it offers a robust, scalable solution to help individuals achieve their career goals.
-"@
-
-Set-Content -Path "Smart_Job_Navigator_Overview.md" -Value $content
