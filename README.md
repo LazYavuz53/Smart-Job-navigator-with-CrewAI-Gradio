@@ -24,7 +24,7 @@ The Smart Job Navigator is an innovative, AI-driven application designed to stre
 
 ### Project Structure
 
-
+```sh
 Smart Job Navigator/
 ├── README.md
 ├── pyproject.toml
@@ -41,7 +41,7 @@ Smart Job Navigator/
 │   │   ├── tasks.py
 │   │   └── tools/
 │   │       └── custom_tool.py
-
+```
 
 ### Technology Stack
 
