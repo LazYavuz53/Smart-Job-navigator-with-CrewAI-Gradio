@@ -65,25 +65,25 @@ Smart Job Navigator/
 
 1. **Clone the Repository**:
 
-   \`\`\`bash
+   ```sh
    git clone <repository-url>
    cd Smart-Job-Navigator
-   \`\`\`
+   ```
 
 2. **Install Dependencies**:
 
-   \`\`\`bash
+   ```sh
    pip install -r requirements.txt
-   \`\`\`
+   ```
 
 3. **Set Environment Variables**:
    - Create a .env file with the necessary environment variables such as API keys.
 
 4. **Run the Application**:
 
-   \`\`\`
+   ``` sh
    uvicorn src.smart_job_navigator.main:app --reload
-   \`\`\`
+   ```
 
 ### Usage
 
