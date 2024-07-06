@@ -30,17 +30,17 @@ Smart Job Navigator/
 ├── pyproject.toml
 ├── requirements.txt
 ├── .env
-├── src/
-│   ├── smart_job_navigator/
-│   │   ├── config/
-│   │   │   ├── agents.yaml
-│   │   │   └── tasks.yaml
-│   │   ├── crew.py
-│   │   ├── main.py
-│   │   ├── agents.py
-│   │   ├── tasks.py
-│   │   └── tools/
-│   │       └── custom_tool.py
+├── smart_job_navigator/
+│   ├── config/
+│   │   ├── agents.yaml
+│   │   └── tasks.yaml
+│   ├── crew.py
+│   ├── main.py
+│   ├── agents.py
+│   ├── tasks.py
+│   └── tools/
+│       └── browser_tools.py
+        └── search_tools.py
 ```
 
 ### Technology Stack
