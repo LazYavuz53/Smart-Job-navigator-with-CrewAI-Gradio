@@ -3,5 +3,6 @@ crewai_tools==0.1.6
 langchain_community==0.0.29
 python-dotenv == 1.0.0
 langchain-openai 
-fastapi==0.110.3
-uvicorn==0.30.1
+fpdf
+requests
+beautifulsoup4
