@@ -27,15 +27,13 @@ The Smart Job Navigator is an innovative, AI-driven application designed to stre
 ```sh
 Smart Job Navigator/
 ├── README.md
-├── pyproject.toml
+├── results.pdf
+├── Dockerfile
 ├── requirements.txt
 ├── .env
 ├── smart_job_navigator/
-│   ├── config/
-│   │   ├── agents.yaml
-│   │   └── tasks.yaml
 │   ├── crew.py
-│   ├── main.py
+│   ├── gradio_app.py
 │   ├── agents.py
 │   ├── tasks.py
 │   └── tools/
