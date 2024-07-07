@@ -46,20 +46,18 @@ Smart Job Navigator/
 ### Technology Stack
 
 - **Python**: Core programming language for development.
-- **FastAPI**: Web framework for building the API.
+- **Gradio**: Framework for building interactive web interfaces.
 - **CrewAI**: Framework for orchestrating autonomous AI agents.
 - **LangChain**: Language model management and interaction.
-- **dotenv**: For managing environment variables.
-- **Uvicorn**: ASGI server for running FastAPI applications.
 
 ### How It Works
 
-1. **User Input**: The user provides a job title and salary range through the web interface.
+1. **User Input**: The user provides a job title and salary range through the Gradio web interface.
 2. **Agent Orchestration**:
    - The **Scout Agent** identifies and summarizes job opportunities.
    - The **BluePrint Agent** analyzes job descriptions to extract requirements and essential skills.
    - The **SuccessJourney Agent** generates a tailored career development roadmap.
-3. **Output**: The application returns a comprehensive career plan, helping the user navigate their career path with clarity and confidence.
+3. **Output**: The application returns a comprehensive career plan as a downloadable PDF, helping the user navigate their career path with clarity and confidence.
 
 ### Setting Up the Project
 
@@ -77,24 +75,18 @@ Smart Job Navigator/
    ```
 
 3. **Set Environment Variables**:
-   - Create a .env file with the necessary environment variables such as API keys.
+   - Create a .env file with the necessary environment variables such as API keys. 
 
 4. **Run the Application**:
 
    ``` sh
-   uvicorn smart_job_navigator.main:app --reload
+   python smart_job_navigator/gradio_app.py
    ```
 
 ### Usage
 
-- **API Endpoint**: The primary endpoint is /kickoff, which initiates the job search and career planning process.
-- **Interactive Documentation**: Access the Swagger UI at http://127.0.0.1:8000/docs to interact with the API and explore its capabilities.
-
-### Future Enhancements
-
-- **User Authentication**: Secure the application with user login and personalized job tracking.
-- **Enhanced Analytics**: Integrate advanced analytics to provide deeper insights into job trends and career progression.
-- **Mobile Support**: Develop a mobile application to make the Smart Job Navigator accessible on the go.
+- **Gradio interface**: Access the Gradio web interface at http://127.0.0.1:7860 to input job titles and salary ranges, and receive detailed career roadmaps.
+- **PDF output**: The career roadmap is provided as a downloadable PDF file for easy access and reference.
 
 ### Conclusion
 
