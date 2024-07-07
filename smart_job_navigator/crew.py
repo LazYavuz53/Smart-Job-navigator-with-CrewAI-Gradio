@@ -3,15 +3,19 @@ from textwrap import dedent
 from agents import SkillAgent
 from tasks import Tasks
 from dotenv import load_dotenv
+import os
 import asyncio
 
+# Load environment variables
 load_dotenv()
 
 class SkillCrew:
     def __init__(self, job_title, salary_range):
         self.job_title = job_title
         self.salary_range = salary_range
-        self.skill_agent = SkillAgent()
+        self.serper_api_key = os.getenv('SERPER_API_KEY')
+        self.openai_api_key = os.getenv('OPENAI_API_KEY')
+        self.skill_agent = SkillAgent(self.serper_api_key, self.openai_api_key)
         self.tasks = Tasks()
 
     def run(self):

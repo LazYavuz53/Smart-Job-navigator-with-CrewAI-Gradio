@@ -4,6 +4,11 @@
 ### Introduction
 
 The Smart Job Navigator is an innovative, AI-driven application designed to streamline the job search and career planning process. Leveraging the powerful capabilities of CrewAI, FastAPI, and advanced language models, this application provides users with detailed career development roadmaps tailored to their desired job titles and salary ranges.
+### Prerequisites
+
+- Docker installed on your machine
+- SERPER API key
+- OpenAI API key
 
 ### Objectives
 
@@ -47,6 +52,7 @@ Smart Job Navigator/
 - **Gradio**: Framework for building interactive web interfaces.
 - **CrewAI**: Framework for orchestrating autonomous AI agents.
 - **LangChain**: Language model management and interaction.
+- **Docker**: For building and deploying the Gradio app.
 
 ### How It Works
 
@@ -80,6 +86,10 @@ Smart Job Navigator/
    ``` sh
    python smart_job_navigator/gradio_app.py
    ```
+4. **Run the Application with Docker image**:
+   ```sh
+   docker pull yavuz53/smart-job-navigator:latest:latest
+   docker run -p 7860:7860 -e SERPER_API=your_serper_api_key -e OPENAI_API=your_openai_api_key yavuz53/smart-job-navigator:latest:latest
 
 ### Usage
 
