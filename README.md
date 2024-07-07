@@ -86,7 +86,7 @@ Smart Job Navigator/
 ### Usage
 
 - **Gradio interface**: Access the Gradio web interface at http://127.0.0.1:7860 to input job titles and salary ranges, and receive detailed career roadmaps.
-- **PDF output**: The career roadmap is provided as a downloadable PDF file for easy access and reference.
+- **PDF output**: The career roadmap is provided as a downloadable PDF file for easy access and reference. See example "results.pdf"
 
 ### Conclusion
 
