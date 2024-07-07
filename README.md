@@ -63,12 +63,14 @@ Smart Job Navigator/
    - The **SuccessJourney Agent** generates a tailored career development roadmap.
 3. **Output**: The application returns a comprehensive career plan as a downloadable PDF, helping the user navigate their career path with clarity and confidence.
 
+![App View](./app_view.png)
+
 ### Setting Up the Project
 
 1. **Clone the Repository**:
 
    ```sh
-   git clone <repository-url>
+   git clone LazYavuz53/Smart-Job-navigator-with-CrewAI-Gradio.git
    cd Smart-Job-Navigator
    ```
 
