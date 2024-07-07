@@ -3,7 +3,7 @@
 # docker tag smart-job-navigator yavuz53/smart-job-navigator:latest
 # push yavuz53/smart-job-navigator:latest
 
-LABEL maintainer="Yavuz Kulaberoglu <yavuzkulaber53@hotmail.com>" \
+LABEL maintainer="Yavuz Kulaber <yavuzkulaber53@hotmail.com>" \
       description="Docker image for Smart Job Navigator" \
       label="1.0"
 
