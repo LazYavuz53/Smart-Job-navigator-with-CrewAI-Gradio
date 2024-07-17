@@ -1,5 +1,5 @@
 # docker login # this is to login to docker hub
-# docker build -t smart-job-navigator . 
+# docker build -t smart-job-navigator .
 # docker tag smart-job-navigator yavuz53/smart-job-navigator:latest
 # push yavuz53/smart-job-navigator:latest
 

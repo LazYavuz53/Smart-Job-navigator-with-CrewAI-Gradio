@@ -1,7 +1,6 @@
 import gradio as gr
 from crew import SkillCrew
 from fpdf import FPDF
-import os
 
 # Define a function to create a PDF
 def create_pdf(job_title, salary_range, result):

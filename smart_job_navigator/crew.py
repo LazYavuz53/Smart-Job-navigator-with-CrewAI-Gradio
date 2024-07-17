@@ -9,12 +9,13 @@ import asyncio
 # Load environment variables
 load_dotenv()
 
+
 class SkillCrew:
     def __init__(self, job_title, salary_range):
         self.job_title = job_title
         self.salary_range = salary_range
-        self.serper_api_key = os.getenv('SERPER_API_KEY')
-        self.openai_api_key = os.getenv('OPENAI_API_KEY')
+        self.serper_api_key = os.getenv("SERPER_API_KEY")
+        self.openai_api_key = os.getenv("OPENAI_API_KEY")
         self.skill_agent = SkillAgent(self.serper_api_key, self.openai_api_key)
         self.tasks = Tasks()
 
@@ -25,27 +26,21 @@ class SkillCrew:
         creation_of_roadmap = self.skill_agent.SuccessJourney()
 
         task_identification = self.tasks.identify_jobs(
-            job_filterer_agent,
-            self.job_title,
-            self.salary_range
+            job_filterer_agent, self.job_title, self.salary_range
         )
 
         extraction_of_requirements = self.tasks.criterium_extracter(
-            requirement_analysis,
-            self.job_title,
-            self.salary_range
+            requirement_analysis, self.job_title, self.salary_range
         )
 
         # ranking_of_skills = self.tasks.skill_ranker(
-            # skill_assessment,
-            # self.job_title,
-            # self.salary_range
+        # skill_assessment,
+        # self.job_title,
+        # self.salary_range
         # )
 
         roadmap_creation = self.tasks.road_map(
-            creation_of_roadmap,
-            self.job_title,
-            self.salary_range
+            creation_of_roadmap, self.job_title, self.salary_range
         )
 
         crew = Crew(
@@ -53,18 +48,19 @@ class SkillCrew:
                 job_filterer_agent,
                 requirement_analysis,
                 # skill_assessment,
-                creation_of_roadmap
+                creation_of_roadmap,
             ],
             tasks=[
                 task_identification,
                 extraction_of_requirements,
                 # ranking_of_skills,
-                roadmap_creation
+                roadmap_creation,
             ],
-            verbose=True
+            verbose=True,
         )
         result = crew.kickoff()
         return result
+
 
 if __name__ == "__main__":
     print("## Welcome to the Skill Crew ##")

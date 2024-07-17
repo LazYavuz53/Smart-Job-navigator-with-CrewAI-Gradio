@@ -3,6 +3,7 @@ from langchain_community.chat_models.openai import ChatOpenAI
 from tools.browser_tools import BrowserTools
 from tools.search_tools import SearchTools
 
+
 class SkillAgent:
     def __init__(self, serper_api_key, openai_api_key):
         self.llm = ChatOpenAI(model="gpt-3.5-turbo", openai_api_key=openai_api_key)
@@ -17,10 +18,11 @@ class SkillAgent:
                           Tech-Savvy Professional: Utilizes advanced AI tools for enhanced job search experiences.""",
             tools=[
                 SearchTools.search_google_jobs,
-                BrowserTools.scrape_and_summarize_website
+                BrowserTools.scrape_and_summarize_website,
             ],
             llm=self.llm,
-            verbose=True)
+            verbose=True,
+        )
 
     def BluePrint(self):
         return Agent(
@@ -31,10 +33,11 @@ class SkillAgent:
                             Advocate for Clarity: Ensures job seekers clearly understand job requirements """,
             tools=[
                 SearchTools.search_google_jobs,
-                BrowserTools.scrape_and_summarize_website
+                BrowserTools.scrape_and_summarize_website,
             ],
             llm=self.llm,
-            verbose=True)
+            verbose=True,
+        )
 
     def SuccessJourney(self):
         return Agent(
@@ -45,7 +48,8 @@ class SkillAgent:
                           Resourceful Guide: Knowledgeable about top learning resources and certification programs. """,
             tools=[
                 SearchTools.search_google_jobs,
-                BrowserTools.scrape_and_summarize_website
+                BrowserTools.scrape_and_summarize_website,
             ],
             llm=self.llm,
-            verbose=True)
+            verbose=True,
+        )

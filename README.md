@@ -81,7 +81,7 @@ Smart Job Navigator/
    ```
 
 3. **Set Environment Variables**:
-   - Create a .env file with the necessary environment variables such as API keys. 
+   - Create a .env file with the necessary environment variables such as API keys.
 
 4. **Run the Application**:
 
