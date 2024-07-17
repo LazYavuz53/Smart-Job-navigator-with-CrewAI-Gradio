@@ -3,7 +3,7 @@
 
 ### Introduction
 
-The Smart Job Navigator is an innovative, AI-driven application designed to streamline the job search and career planning process. Leveraging the powerful capabilities of CrewAI, FastAPI, and advanced language models, this application provides users with detailed career development roadmaps tailored to their desired job titles and salary ranges.
+The Smart Job Navigator is an innovative, AI-driven application designed to streamline the job search and career planning process. Leveraging the powerful capabilities of CrewAI, Gradio, and advanced language models, this application provides users with detailed career development roadmaps tailored to their desired job titles and salary ranges.
 ### Prerequisites
 
 - Docker installed on your machine
@@ -100,4 +100,4 @@ Smart Job Navigator/
 
 ### Conclusion
 
-The Smart Job Navigator aims to revolutionize the job search and career planning landscape by providing personalized, AI-driven insights and roadmaps. With a strong foundation in CrewAI and FastAPI, it offers a robust, scalable solution to help individuals achieve their career goals.
+The Smart Job Navigator aims to revolutionize the job search and career planning landscape by providing personalized, AI-driven insights and roadmaps. With a strong foundation in CrewAI and Gradio, it offers a robust, scalable solution to help individuals achieve their career goals.
